@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { getMovieCast } from '../../servises/API';
+import noPhoto from '../../Image/noPhoto.jpg'
 
 export default function Cast() {
   const [cast, setCast] = useState();
@@ -18,7 +19,11 @@ export default function Cast() {
         cast.map(({ id, profile_path, name }) => (
           <li key={id} >
             <img
-              src={`https://image.tmdb.org/t/p/w500${profile_path}`}
+              src={
+                profile_path ?              
+                `https://image.tmdb.org/t/p/w500${profile_path}`
+                : noPhoto
+              }
               alt={name}
               width="150"
             />

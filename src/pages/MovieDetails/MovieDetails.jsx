@@ -6,13 +6,11 @@ export default function MovieDetailsPage() {
   const [movie, setMovie] = useState();
   const { movieId } = useParams();
 
-  useEffect(() => {
-    (() => {
+  useEffect(() => {    
       movieId &&
         getMovieDetails(movieId).then(data => {
           setMovie(data);
-        });
-    })();
+        });    
   }, [movieId]);
 
   return (

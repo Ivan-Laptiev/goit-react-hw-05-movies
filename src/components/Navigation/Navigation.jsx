@@ -1,23 +1,23 @@
-import { NavLink } from 'react-router-dom';
+import { NavLink, Outlet } from 'react-router-dom';
 
 export default function Navigation() {
   return (
     <nav >
       <NavLink
-        to="/"
-        
+        to="/"    
       >
         {' '}
         Home
       </NavLink>
 
       <NavLink
-        to="/movies"
-        
+        to="/movies"        
       >
         {' '}
         Movies
       </NavLink>
+      <Outlet/> 
     </nav>
+      
   );
 }

@@ -5,12 +5,10 @@ import MoviesList from '../../components/MoviesList/MovieList';
 export default function Home() {
   const [movies, setMovies] = useState();
 
-  useEffect(() => {
-    (() => {
+  useEffect(() => {    
       getPopularMovie().then(films => {
         setMovies(films);
-      });
-    })();
+      });    
   }, []);
 
   return (

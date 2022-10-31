@@ -10,13 +10,11 @@ export default function Movies() {
 
   const query = searchParams.get('query');
 
-  useEffect(() => {
-    (() => {
+  useEffect(() => {    
       query &&
         getSearchMovie(query).then(data => {
           setFilms(data.results);
-        });
-    })();
+        });    
   }, [query]);
 
   const onHandleChange = e => {
